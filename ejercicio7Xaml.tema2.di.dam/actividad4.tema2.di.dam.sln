@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ejercicio7Xaml.tema2.di.dam", "actividad4.tema2.di.dam\ejercicio7Xaml.tema2.di.dam.csproj", "{21F4EE48-7912-47C5-B5BD-B5B6AFDBEAF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21F4EE48-7912-47C5-B5BD-B5B6AFDBEAF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F4EE48-7912-47C5-B5BD-B5B6AFDBEAF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F4EE48-7912-47C5-B5BD-B5B6AFDBEAF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F4EE48-7912-47C5-B5BD-B5B6AFDBEAF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A87DA414-B122-4F6E-8DB9-72CAA0226DA9}
+	EndGlobalSection
+EndGlobal

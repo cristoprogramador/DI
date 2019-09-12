@@ -1,0 +1,97 @@
+﻿<Window x:Class="Tema3.Ejercicio2.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ac="clr-namespace:System.Windows.Controls;assembly=Accordion"
+        xmlns:local="clr-namespace:Tema3.Ejercicio2.di.dam"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Icon="icons/Ventana.png"
+        Title="Tema 3 - Ejercicio 3 - DI" Height="450" Width="600"
+        >
+    <DockPanel>
+        
+        <Grid DockPanel.Dock="Left">
+            <ac:Accordion VerticalAlignment="Stretch">
+
+                <ac:AccordionItem Header="Vista General" Background="#17B6B6" Foreground="White" 
+                                  ToolTip="Vista general del Sistema">
+                    <StackPanel Background="White"
+                                Style="{StaticResource spVistaGeneral}">
+                        <Button Content="Estado" x:Name="estado" ToolTip="Estado General" Click="estado_Click"
+                                Style="{StaticResource btVistaGeneral}"/>
+
+                    </StackPanel>
+                </ac:AccordionItem>
+
+                <ac:AccordionItem Header="Segurdiad del PC" Background="#27B977" Foreground="White"
+                                  ToolTip="Seguridad del PC">
+                    <StackPanel Background="White"
+                                Style="{StaticResource spSeguridadPC}">
+                        <Button Content="Escanear Sistema" x:Name="escanearSistema" ToolTip="Escanear Sistema"
+                                Style="{StaticResource btSeguridadPC}"/>
+                        <Button Content="Proteccion Tiempo Real" x:Name="proteccion" ToolTip="Protección En tiempo Real"
+                                Style="{StaticResource btSeguridadPC}"/>
+                        <Button Content="Backup" x:Name="backup" ToolTip="Backup del PC"
+                                Style="{StaticResource btSeguridadPC}"/>
+                    </StackPanel>
+                </ac:AccordionItem>
+
+                <ac:AccordionItem Header="Seguridad en Internet" Background="#016472" Foreground="White"
+                                  ToolTip="Seguridad en Internet">
+                    <StackPanel Background="White"
+                                Style="{StaticResource spSeguridadInternet}">
+                        <Button Content="Firewall" x:Name="firewall" ToolTip="Firewall del sistema" 
+                                Style="{StaticResource btSeguridadInternet}"/>
+                        <Button Content="Proteccion Web" x:Name="proteccionWeb" ToolTip="Protección en la navegación" 
+                                Style="{StaticResource btSeguridadInternet}"/>
+                        <Button Content="Proteccion Mail" x:Name="proteccionMail" ToolTip="Protección del correo"
+                                Style="{StaticResource btSeguridadInternet}"/>
+                    </StackPanel>
+                </ac:AccordionItem>
+
+                <ac:AccordionItem Header="Administración" Background="#EC9C00" Foreground="White"
+                                  ToolTip="Administración de la protección">
+                    <StackPanel Background="White"
+                                Style="{StaticResource spAdministracion}">
+                        <Button Content="Cuarentena" x:Name="cuarentena" ToolTip="Archivos en cuarentena"
+                                Style="{StaticResource btAdministracion}"/>
+                        <Button Content="Programador" x:Name="programador" ToolTip="Progamar tareas de seguridad" 
+                                Style="{StaticResource btAdministracion}"/>
+                        <Button Content="Informes" x:Name="informes" ToolTip="Informes de seguridad" 
+                                Style="{StaticResource btAdministracion}"/>
+                        <Button Content="Eventos" x:Name="eventos" ToolTip="Eventos destacados de seguridad" 
+                                Style="{StaticResource btAdministracion}"/>
+                    </StackPanel>
+                </ac:AccordionItem>
+            </ac:Accordion>
+        </Grid>
+        
+        <Grid DockPanel.Dock="Top">
+            <ToolBar Background="#34495e" Height="40">
+                <Button Style="{StaticResource btToolbar}"
+                         x:Name="buscar" ToolTip="Buscar">
+                    <Image Source="icons/Buscar.png"/>
+                </Button>
+                <Button Style="{StaticResource btToolbar}"
+                         x:Name="filtar" ToolTip="Filtar busqueda">
+                    <Image Source="icons/Filtrar.png"/>
+                </Button>
+                <Button Style="{StaticResource btToolbar}"
+                         x:Name="refrescar" ToolTip="Refrescar estado">
+                    <Image Source="icons/Refrescar.png"/>
+                </Button>
+                <Button Style="{StaticResource btToolbar}"
+                         x:Name="cancel" ToolTip="Estado General" Click="cancel_Click">
+                    <Image Source="icons/Cancel.png"/>
+                </Button>
+            </ToolBar>
+        </Grid>
+
+        <Grid DockPanel.Dock="Bottom">
+            <Image x:Name="pieEstate" Source="icons/PieChart.jpg"
+                   Visibility="Hidden"/>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,73 @@
+﻿<mah:MetroWindow x:Class="dam.di.examen.t456.Vista.Dialogos.DiagInsertaDisco"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dam.di.examen.t456.Vista.Dialogos"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        mc:Ignorable="d" Width="800" Height="400"
+        Icon="/Recursos/Iconos/discoblanco.png"
+        Title="INSERTAR DISCO" >
+    <DockPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.ColumnSpan="4" Orientation="Horizontal">
+                <TextBlock Text="NUEVO DISCO" Style="{StaticResource stbTitulo}"/>
+                <Image Source="/Recursos/Iconos/disco.png" Width="38"/>
+            </StackPanel>
+            <Separator Background="Black" Height="10"
+                       VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+            
+            <!--bajo-->
+            <TextBlock Text="Los campos con este formato son obligatorios" FontStyle="Italic"
+                       Grid.Row="1" Grid.ColumnSpan="2" Margin="20,10,10,10"/>
+            
+           <!--columnas Informativas-->
+            <TextBlock Text="Nombre del disco" Style="{StaticResource stbFormularioObligatorio}"
+                       Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBlock Text="Compañia editora" Style="{StaticResource stbFormularioObligatorio}"
+                       Grid.Row="3" Grid.Column="0" VerticalAlignment="Center"/>
+            <TextBlock Text="Fecha de publicación" Style="{StaticResource  stbFormulario}"
+                       Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+            <TextBlock Text="Grupo compositor" Style="{StaticResource stbFormularioObligatorio}"
+                       Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"/>
+            <!--columnas de datos-->
+            <TextBox x:Name="txtNombre" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="0,0,10,0" 
+                     Text="{Binding nuevoDisco.nombre, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+            <ComboBox x:Name="cbmCompany" Grid.Row="3" Grid.Column="1" Text="Selecciona una compañia" VerticalAlignment="Center" Margin="0,0,10,0"
+                      IsEditable="True" IsReadOnly="True"
+                      DisplayMemberPath="nombre" ItemsSource="{Binding listaCompany}" 
+                      SelectedItem="{Binding nuevoDisco.companyia, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+           
+            <DatePicker x:Name="dpFechaPublicacion" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center" Margin="0,0,10,0"
+                        SelectedDate="{Binding nuevoDisco.fecha}"/>
+            <ComboBox x:Name="cbmGrupo" Grid.Row="3" Grid.Column="3" Text="Selecciona un grupo" VerticalAlignment="Center" Margin="0,0,10,0"
+                      IsEditable="True" IsReadOnly="True"
+                      DisplayMemberPath="nombre" ItemsSource="{Binding listaGrupo}" 
+                      SelectedItem="{Binding nuevoDisco.grupo, ValidatesOnDataErrors=True, NotifyOnValidationError=True}"/>
+
+            <!--Botones -->
+            <Button x:Name="btnCancel" Content="Cancelar" IsCancel="True" Background="LightGray" 
+                    Height="20" Width="70" Click="btnCancel_Click"
+                    Grid.Column="3" Grid.Row="4" HorizontalAlignment="Left" Margin="0,10"/>
+            
+            <Button x:Name="btnGuardar" Content="Guardar" IsDefault="True" Background="LightGray" 
+                    Height="20" Width="70" Click="btnGuardar_Click"
+                    Grid.Column="3" Grid.Row="4" HorizontalAlignment="Right" Margin="0,0,10,0"/>
+        </Grid>
+    </DockPanel>
+        
+    
+</mah:MetroWindow>

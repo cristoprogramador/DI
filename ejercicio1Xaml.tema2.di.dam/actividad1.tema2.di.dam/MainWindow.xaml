@@ -1,0 +1,56 @@
+﻿<Window x:Class="actividad1.tema2.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:actividad1.tema2.di.dam"
+        mc:Ignorable="d"
+        Title="Ejercicios Tema 2" Height="400" Width="600">
+    <Grid>
+        <!--Con DockPanel (parte top y central. Dentro de cada una un grid panel)-->
+        <DockPanel>
+            <!--parte de arriba-->
+            <Grid DockPanel.Dock="Top" Background="LightGray">
+                <TextBlock Text="Ejercicio 1"  Foreground="DarkRed" 
+                           FontSize="32" Margin="20"/>
+            </Grid>
+            
+            <!--Parte central-->
+            <Grid Background="Gray" Name="gridCentral" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <CheckBox x:Name="checkPonerColor" Content="Poner Color" Margin="20" 
+                          Foreground="White"
+                          FontWeight="Bold" FontSize="17" 
+                          Checked="checkPonerColor_Checked"
+                          Unchecked="checkPonerColor_Unchecked"/>
+                
+                <CheckBox x:Name="checkMostrarCadena" Content="Mastrar Cadena" 
+                          Margin="20" Grid.Row="1"
+                          Foreground="White" FontWeight="Bold" FontSize="17"
+                          Checked="checkMostrarCadena_Checked"
+                          Unchecked="checkMostrarCadena_Unchecked"/>
+                
+                <Image Source="linuxkillwindows.jpg" Width="300" Grid.Column="1" 
+                       Grid.RowSpan="3" 
+                       Margin="20" />
+                
+                <TextBlock x:Name="cadenaOculta" 
+                           Text="Mostrando la cadena oculata..." 
+                           FontSize="27"
+                           Grid.Row="2" 
+                           Foreground="White" 
+                           FontStyle="Italic" 
+                           Visibility="Hidden" 
+                           Margin="20"/>
+            </Grid>
+        </DockPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="Tema02.Ejercicio10.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema02.Ejercicio10.di.dam"
+        mc:Ignorable="d"
+        TextBlock.Foreground="Gray"
+        Title="MainWindow" Height="450" Width="750">
+    <Grid>
+        <!--Definimos un grid de 4 columnas 12 filas-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Bienvenido a HP Support Assistant" 
+                   Margin="5"
+                   FontSize="20" Grid.ColumnSpan="4"/>
+        <!--segunda fila stack panel-->
+        <StackPanel Orientation="Horizontal" 
+                    Grid.Row="1" Grid.ColumnSpan="4">
+            <TextBlock Text="Gestione las actualizaciones, encuentre soluciones y póngase en contacto con soporte técnico."
+                   Style="{StaticResource stbText}"
+                   />
+            <TextBlock Text="Más información"
+                Style="{StaticResource stbText}" Foreground="DeepSkyBlue"
+                />
+        </StackPanel>
+        <Separator Background="Gray" VerticalAlignment="Bottom" 
+                   Margin="5,0,5,0"
+                   Grid.Row="1" Grid.ColumnSpan="5"/>
+        <TextBlock Text="1. Seleccione cómo desea recibir las actualizaciones de HP."
+                   Style="{StaticResource stbHead}"
+                   Grid.Row="2" Grid.ColumnSpan="4"/>
+        <RadioButton Content="Instarar actualizaciones importantes automáticamente cuando sea posible"
+                     IsChecked="True"
+                     Style="{StaticResource srbText}"
+                     Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <RadioButton Content="Instarar actualizaciones importantes y recomendadas automáticamente cuando sea posible"
+                     Style="{StaticResource srbText}"
+                     Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <TextBlock Text=" + Más opciones | Visualizar los datos del equipo recolectados y enviarlos a HP durante las exploraciones y actualizaciones de HP | Declaración de privacidad de HP"
+                   Style="{StaticResource stbText}"
+                   Foreground="DeepSkyBlue"
+                   Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3"/>
+        <TextBlock Text="Se instalarán los componentes más recientes en HP Support Assistant durante la exploraciópn para garantizar la mejor experiencia posible. Los resualtados de las exploraciones e instalaciones se envían de su equipo a HP, pero no contienen información personal."
+                   Style="{StaticResource stbText}"
+                   Margin="5,0,10,5"
+                   Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <TextBlock Text="2. Permite que el equipo muestre información de contacto, de garantía y datos importantes de soporte"
+                   Style="{StaticResource stbHead}"
+                   Grid.Row="7" Grid.ColumnSpan="3"/>
+        <RadioButton Content="Si (Recomendado)"
+                     Style="{StaticResource srbText}"
+                     Grid.Row="8" Grid.Column="1"/>
+        <RadioButton Content="No"
+                     Style="{StaticResource srbText}"
+                     Grid.Row="8" Grid.Column="2"/>
+        <TextBlock Text="Ver datos recopilados"
+                   Style="{StaticResource stbText}"
+                   Foreground="DeepSkyBlue"
+                   Grid.Row="8" Grid.Column="3"/>
+        <TextBlock Text="3. Selecciones cómo desea que se le notifique"
+                   Style="{StaticResource stbHead}"
+                   Grid.Row="9" Grid.ColumnSpan="3"/>
+        <CheckBox Selector.IsSelected="True"
+                  Style="{StaticResource cbText}"
+                  Grid.Row="10" Grid.Column="1"
+                  IsChecked="True">
+            <TextBlock Text="Mostrar un icono en su barra de tareas. El icono cambiará según el tipo de mensaje o actualización."
+                       Style="{StaticResource stbText}"/>
+        </CheckBox>
+        <CheckBox Style="{StaticResource cbText}"
+                  Selector.IsSelected="True"
+                  Grid.Row="10" Grid.Column="2"
+                  IsChecked="True">
+            <TextBlock Text="Mostrar un icono en su barra de tareas. El icono cambiará según el tipo de mensaje o actualización."
+                       Style="{StaticResource stbText}"/>
+        </CheckBox>
+        <Separator Background="Gray" VerticalAlignment="Bottom" 
+                   Grid.Row="10" Grid.ColumnSpan="5"/>
+        <CheckBox Content="Mostrar una pantalla de bienvenida cuando abro HP Suport Assistant"
+                  Style="{StaticResource cbText}"
+                  Margin="15,15,5,5"
+                  Grid.Row="11" Grid.ColumnSpan="3"/>
+        <Button Content="Siguiente"
+                Foreground="White" Background="LightGray"
+                Width="75"
+                Margin="5,15,5,5"
+                Grid.Row="11" Grid.Column="4"/>
+
+    </Grid>
+</Window>

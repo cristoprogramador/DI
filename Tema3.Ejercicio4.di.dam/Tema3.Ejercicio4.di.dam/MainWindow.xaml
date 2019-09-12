@@ -1,0 +1,109 @@
+﻿<Window x:Class="Tema3.Ejercicio4.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3.Ejercicio4.di.dam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+    <DockPanel>
+        <!--Cabecera-->
+        <Grid DockPanel.Dock="Top" Background="#0e166e">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Source="icons/Principal.png" Width="40" Margin="15"/>
+            <TextBlock Grid.Column="1" x:Name="textHead"
+                Text="Dashboard" FontSize="20" 
+                       Foreground="White" FontWeight="Bold"
+                       VerticalAlignment="Center" Margin="10"/>
+        </Grid>
+
+        <!--Tab Control-->
+        <TabControl TabStripPlacement="Left" x:FieldModifier="tabControlPrincipal"
+                    SelectionChanged="tabControlPrincipal_SelectionChanged">
+            <!--Dashboard-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icons/Dashboard.png" Margin="2"/>
+                        <TextBlock Grid.Column="1" Text="Dashboard"
+                                   Margin="5"/>
+                    </Grid>
+                </TabItem.Header>
+
+                <Grid x:Name="gridDashboard">
+                    <!--Cinco columnas-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--11 filas-->
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <ComboBox x:Name="comboFormato" Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5"
+                              SelectionChanged="comboFormato_SelectionChanged" HorizontalAlignment="Left" Width="555">
+                        
+                    </ComboBox>
+                </Grid>
+            </TabItem>
+
+
+            <!--Themes-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icons/Themes.png" Margin="2" />
+                        <TextBlock Grid.Column="1" Text="Themes"
+                                   Margin="5"/>
+                    </Grid>
+                </TabItem.Header>
+
+            </TabItem>
+
+            <!--Components-->
+            <TabItem>
+                <TabItem.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="20"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="icons/Dashboard.png" Margin="2"/>
+                        <TextBlock Grid.Column="1" Text="Components"
+                                   Margin="5"/>
+                    </Grid>
+                </TabItem.Header>
+
+            </TabItem>
+        </TabControl>
+
+    </DockPanel>
+</Window>

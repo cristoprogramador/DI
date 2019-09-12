@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="dam.di.repaso.navidad.Vista.ControlesUsuario.UCOficinas"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:ent="clr-namespace:dam.di.repaso.navidad.Modelo"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:dam.di.repaso.navidad.Vista.ControlesUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Left">
+            <TreeView x:Name="arbolOficina" ItemsSource="{Binding listaOficinas}" SelectedItemChanged="arbolOficina_SelectedItemChanged">
+                <TreeView.Resources>
+                    <HierarchicalDataTemplate DataType="{x:Type ent:oficinas}"
+                                              ItemsSource="{Binding empleados}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Recursos/Iconos/Oficinas.png" Height="14"/>
+                            <TextBlock Text="{Binding Ciudad}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type ent:empleados}"
+                                              ItemsSource="{Binding  clientes}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Recursos/Iconos/Empleado.png" Height="14"/>
+                            <TextBlock Text="{Binding  Apellido1}"/>
+                            <TextBlock Text=", "/>
+                            <TextBlock Text="{Binding  Nombre}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                    <HierarchicalDataTemplate DataType="{x:Type ent:clientes}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Recursos/Iconos/Clientes.png" Height="14"/>
+                            <TextBlock x:Name="clienteArbol" Text="{Binding NombreCliente}"/>
+                            <TextBlock Text=", Contacto: "/>
+                            <TextBlock Text="{Binding ApellidoContacto}"/>
+                            <TextBlock Text=", "/>
+                            <TextBlock Text="{Binding NombreContacto}"/>
+                        </StackPanel>
+                    </HierarchicalDataTemplate>
+                </TreeView.Resources>
+            </TreeView>
+        </Grid>
+        <Grid>
+            <DataGrid x:Name="dtEmpleados" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre del cliente" Binding="{Binding NombreCliente}"/>
+                    <DataGridTemplateColumn Header="Nombre del contacto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding NombreContacto}"/>
+                                    <TextBlock Text=" /"/>
+                                    <TextBlock Text="{Binding ApellidoContacto}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Telefono cliente" Binding="{Binding NombreCliente}"/>
+                    <DataGridTextColumn Header="Telefono cliente" Binding="{Binding NombreCliente}"/>
+                    <DataGridTextColumn Header="Telefono cliente" Binding="{Binding NombreCliente}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+</UserControl>

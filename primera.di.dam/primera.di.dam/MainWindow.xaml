@@ -1,0 +1,19 @@
+﻿<Window x:Class="primera.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:primera.di.dam"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Canvas>
+        <Rectangle Canvas.Left="40" Canvas.Top="31" Width="63"
+Height="41" Fill="Blue" />
+        <Ellipse Canvas.Left="130" Canvas.Top="79" Width="58" Height="58"
+Fill="Blue" />
+        <Path Canvas.Left="61" Canvas.Top="28" Width="133" Height="98"
+Fill="Blue"
+ Stretch="Fill" Data="M61,125 L193,28"/>
+    </Canvas>
+
+</Window>

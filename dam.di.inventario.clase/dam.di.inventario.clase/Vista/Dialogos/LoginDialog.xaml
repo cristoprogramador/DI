@@ -1,0 +1,43 @@
+﻿<mah:MetroWindow x:Class="dam.di.inventario.clase.Vista.Dialogos.LoginDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+        xmlns:local="clr-namespace:dam.di.inventario.clase.Vista.Dialogos"
+        FocusManager.FocusedElement="{Binding ElementName=txtLogin}"
+        mc:Ignorable="d" Icon="/Recursos/Imagenes/ventana.png"
+        Title="LOGIN" Height="300" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Border Grid.ColumnSpan="2" Background="#333333" />
+        <TextBlock Text="Inicio de sesión" Style="{StaticResource stbTitulo}" />
+        <TextBlock Text="Nombre de usuario:" Grid.Row="1" Margin="40,20,20,20"/>
+        <TextBox Grid.Column="1" Grid.Row="1" Margin="20" x:Name="txtLogin" TextChanged="txtLogin_TextChanged" />
+        <Image Source="/Recursos/Iconos/error.png" Height="16" Grid.Column="1" Grid.Row="1" 
+               x:Name="imgErrorNombreUsuario" HorizontalAlignment="Left" Visibility="Hidden" />
+        <TextBlock Text="Contraseña:" Grid.Row="2" Margin="40,20,20,20" />
+        <Image Source="/Recursos/Iconos/error.png" Height="16" Grid.Column="1" Grid.Row="2" 
+               x:Name="imgErrorPass" HorizontalAlignment="Left" Visibility="Hidden" />
+        <PasswordBox Grid.Column="1" Grid.Row="2" Margin="20" x:Name="passLogin" PasswordChanged="passLogin_PasswordChanged" />
+        <Button IsDefault="True" Grid.Column="1" Grid.Row="3" Style="{StaticResource sbtnBtnRedondo}"
+                HorizontalAlignment="Left" Margin="20,10,0,10" x:Name="btnLoginGuardar"
+                Click="btnLoginGuardar_Click">
+            <Image Source="/Recursos/Iconos/login.png" Height="24" />
+        </Button>
+                <Button IsCancel="True" Grid.Column="1" Grid.Row="3" Style="{StaticResource sbtnBtnRedondo}"
+                HorizontalAlignment="Right" Margin="0,10,20,10" x:Name="btnLoginCancelar"
+                Click="btnLoginCancelar_Click" >
+                    <Image Source="/Recursos/Iconos/cancelar.png" Height="24" />
+                </Button>
+    </Grid>
+</mah:MetroWindow>

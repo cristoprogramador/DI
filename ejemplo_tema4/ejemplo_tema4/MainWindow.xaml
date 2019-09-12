@@ -1,0 +1,149 @@
+﻿<controles:MetroWindow x:Class="ejemplo_tema4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:ex="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ac="clr-namespace:System.Windows.Controls;assembly=Accordion"
+        xmlns:controles="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:ejemplo_tema4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <DockPanel>
+            <Grid DockPanel.Dock="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="Recursos/imgs/computerIcon.png" Height="77" Margin="35,0,35,0"/>
+                <TextBlock Text="Inventario - Henri Matisse" FontSize="28" FontWeight="Bold" Foreground="#0064b7" Grid.Column="1" 
+                           HorizontalAlignment="Center" Margin="60,16,0,16"/>
+                <ex:DropDownButton Grid.Column="2" Margin="14" Height="25" Width="50" Background="Gray" BorderBrush="Black" HorizontalAlignment="Right">
+                    <ex:DropDownButton.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/Recursos/Iconos/login.png"/>
+                            <TextBlock x:Name="tbNombreUsuario" Margin="5,0,0,0" Foreground="White"/>
+                        </StackPanel>
+                    </ex:DropDownButton.Content>
+                    <ex:DropDownButton.DropDownContent>
+                        <StackPanel Background="#333">
+                            <MenuItem Header="Modificar perfil">
+                                <MenuItem.Icon>
+                                    <Image Height="24"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Cambiar contraseña">
+                                <MenuItem.Icon>
+                                    <Image Height="24"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <Separator />
+                            <MenuItem Header="Cerrar sesión">
+                                <MenuItem.Icon>
+                                    <Image Height="24"/>
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </StackPanel>
+                    </ex:DropDownButton.DropDownContent>
+                </ex:DropDownButton>
+
+            </Grid>
+            <Grid DockPanel.Dock="Left">
+                <ac:Accordion VerticalAlignment="Stretch" Width="150">
+                    <ac:AccordionItem  Background="#0064b7">
+                        <ac:AccordionItem.Header>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="Recursos/Iconos/articulo.png" Grid.Column="0" Height="18" Margin="0,0,5,0"/>
+                                <TextBlock Text="Articulos" Grid.Column="1" FontWeight="Bold" FontSize="14" Foreground="White"/>
+                            </Grid>
+
+                        </ac:AccordionItem.Header>
+                        <!--Indicamos que la anchura o la altura sera la de grid padre antecesor-->
+                        <StackPanel Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}">
+                            <Button Click="btnArticuloMVC_Click" Content="Nuevo MVC" Style="{StaticResource buttonAccordion}"/>
+                            <Button Click="btnArticuloMVVM_Click" Content="Nuevo MVVM" Style="{StaticResource buttonAccordion}"/>
+                        </StackPanel>
+                    </ac:AccordionItem>
+
+                    <ac:AccordionItem Background="#0064b7">
+                        <ac:AccordionItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="Recursos/Iconos/Modelo.png" Grid.Column="0" Height="18" Margin="0,0,5,1"/>
+                                <TextBlock Text="Modelo" Grid.Column="1" FontWeight="Bold" FontSize="14" Foreground="White" HorizontalAlignment="Right" Width="59"/>
+                            </Grid>
+                        </ac:AccordionItem.Header>
+                        <!--Indicamos que la anchura o la altura sera la de grid padre antecesor-->
+                        <StackPanel Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}">
+                            
+                            <Button Click="btnModeloMVC_Click" Content="Nuevo MVC" Style="{StaticResource buttonAccordion}"/>
+                            <Button Click="btnModeloMVVM_Click" Content="Nuevo MVVM" Style="{StaticResource buttonAccordion}"/>
+                        </StackPanel>
+                    </ac:AccordionItem>
+
+                    <ac:AccordionItem  Background="#0064b7">
+                        <ac:AccordionItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="Recursos/Iconos/User.png" Grid.Column="0" Height="18" Margin="0,0,5,1"/>
+                                <TextBlock Text="Usuario" Grid.Column="1" FontWeight="Bold" FontSize="14" Foreground="White" HorizontalAlignment="Right" Width="59"/>
+                            </Grid>
+                        </ac:AccordionItem.Header>
+                        <!--Indicamos que la anchura o la altura sera la de grid padre antecesor-->
+                        <StackPanel Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}">
+                            <Button Click="ribBtnUsuarioMVC_Click" Content="NuevoMVC" Style="{StaticResource buttonAccordion}"/>
+                            <Button Click="ribBtnUsuarioMVVM_Click" Content="NuevoMVVM" Style="{StaticResource buttonAccordion}"/>
+                            <Button Content="Editar" Style="{StaticResource buttonAccordion}"/>
+                            <Button Content="Listar" Style="{StaticResource buttonAccordion}"/>
+                        </StackPanel>
+                    </ac:AccordionItem>
+                    <ac:AccordionItem  Background="#0064b7">
+                        <ac:AccordionItem.Header>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <Image Source="Recursos/Iconos/Table.png" Grid.Column="0" Height="18" Margin="0,0,5,1"/>
+                                <TextBlock Text="Tablas" Grid.Column="1" FontWeight="Bold" FontSize="14" Foreground="White" HorizontalAlignment="Right" Width="59"/>
+                            </Grid>
+                        </ac:AccordionItem.Header>
+                        <!--Indicamos que la anchura o la altura sera la de grid padre antecesor-->
+                        <StackPanel Background="White" Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualWidth}" Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}},Path=ActualHeight}">
+                            <Button Click="btnTableModelo_Click" Content="Modelo articulo" Style="{StaticResource buttonAccordion}"/>
+                            <Button Click="btnTableUsuario_Click" Content="Usuario" Style="{StaticResource buttonAccordion}"/>
+                            <Button Click="btnTableArticulo_Click" Content="Articulo" Style="{StaticResource buttonAccordion}"/>
+                            
+                        </StackPanel>
+                    </ac:AccordionItem>
+                </ac:Accordion>
+                
+
+            </Grid>
+            <Grid x:Name="gridCentral" DockPanel.Dock="Right">
+                
+            </Grid>
+        </DockPanel>
+    </Grid>
+</controles:MetroWindow>

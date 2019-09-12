@@ -1,0 +1,89 @@
+﻿<Window x:Class="Tema2.Ejercicio3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema2.Ejercicio3"
+        mc:Ignorable="d"
+        Title="Ejericicio5" Height="476.382" Width="690.849" Icon="Icons/XAML-16.png">
+    <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Background="#FF0665DC">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnCurrent" Content="Current" Margin="15" Padding="5" Width="100" Grid.Column="0" Grid.Row="0" 
+                    Style="{StaticResource sbtnNormal}"/>
+            <Button x:Name="btnProjected" Content="Projected" Margin="15" Padding="5" Width="100" Grid.Column="1" Grid.Row="0"
+                    Style="{StaticResource sbtnNormal}"/>
+            <Rectangle VerticalAlignment="Stretch" Width="1" Margin="2" Stroke="Black" />
+            <Button x:Name="btnAyuda" HorizontalAlignment="Right" Margin="15" Padding="5" Grid.Column="3"  Grid.Row="0" Style="{StaticResource sbtnNormal}">
+                <Image x:Name="image" Height="32" Width="32" Source="Icons/Interrogante.png"/>
+            </Button>
+            <Rectangle x:Name="rectangle1" Height="3" Fill="Black" Stroke="Black" HorizontalAlignment="Stretch" />
+        </Grid>
+        <StackPanel DockPanel.Dock="Left">
+            <Label Content="Data" Margin="10,0,15,0" FontSize="16" FontWeight="Bold"/>
+            <Button x:Name="btnSales" Content="Sales" Margin="20,10,15,0" BorderBrush="White" Background="White" FontSize="14" HorizontalAlignment="Left" />
+            <Button x:Name="btnMarketing" Content="Marketing" Margin="20,10,15,0" BorderBrush="White" Background="White" FontSize="14" HorizontalAlignment="Left" />
+            <Button x:Name="btnDistribution" Content="Distribution" Margin="20,10,15,0" BorderBrush="White" Background="White" FontSize="14" HorizontalAlignment="Left" />
+            <Button x:Name="btnCosts" Content="Costs" Margin="20,10,15,0" BorderBrush="White" Background="White" FontSize="14" HorizontalAlignment="Left" />
+        </StackPanel>
+        <WrapPanel DockPanel.Dock="Right" Width="115">
+            <Button x:Name="btnBarChart" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imageBarChart" Height="32" Width="32" Source="Icons/Bar Chart.png"/>
+            </Button>
+            <Button x:Name="btnLineChart" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imageLineChart" Height="32" Width="32" Source="Icons/Line Chart.png"/>
+            </Button>
+            <Button x:Name="btnComboChart" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imageComboChart" Height="32" Width="32" Source="Icons/Combo Chart.png"/>
+            </Button>
+            <Button x:Name="btnPieChart" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imagePieChart" Height="32" Width="32" Source="Icons/Pie Chart.png"/>
+            </Button>
+            <Button x:Name="btnLocation" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imageLocation" Height="32" Width="32" Source="Icons/Location.png"/>
+            </Button>
+            <Button x:Name="btnRelative" HorizontalAlignment="Right" Margin="10" Background="Transparent" BorderBrush="#0665dc">
+                <Image x:Name="imageRelative" Height="32" Width="32" Source="Icons/Relative.png"/>
+            </Button>
+        </WrapPanel>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Image x:Name="imageCasa" Source="Icons/Casa.png" Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"/>
+            <Label x:Name="lblSales" Content="Sales: Current Year" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" FontSize="20" FontWeight="Bold"/>
+            <Label x:Name="lblGoods" Content="Goods and Services" Grid.Column="1" Grid.Row="1"/>
+            <Label x:Name="lblServices" Content="Services 20%" Grid.Column="3" Grid.Row="2" Margin="0,0,5,0" />
+            <TextBlock x:Name="lblGoods1" Grid.Column="0" Grid.Row="3" TextWrapping="WrapWithOverflow" VerticalAlignment="Bottom" Height="16" Margin="0,0,0,0.2">
+                Goods
+                80%
+            </TextBlock>
+            <Image x:Name="imgGrafico" Grid.Column="1" Grid.Row="2" Source="Icons/Principal.png" 
+                   Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="27,0,27.6,0.2"/>
+            <Button x:Name="btnSave" Content="Save" Grid.Column="2" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Bottom" 
+                    Style="{StaticResource sbtnNormal}" Width="65" Height="20" />
+            <Button x:Name="btnCancel" Content="Cancel" Grid.Column="3" HorizontalAlignment="Right" Grid.Row="4" VerticalAlignment="Bottom" 
+                    Style="{StaticResource sbtnNormal}" Margin="10,0,10,0" Width="65" Height="20"/>
+
+        </Grid>
+    </DockPanel>
+
+</Window>

@@ -1,0 +1,58 @@
+﻿<Window x:Class="dam.di.inventario.clase.Vista.Dialogos.DiagModeloArticuloMVC"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dam.di.inventario.clase.Vista.Dialogos"
+        mc:Ignorable="d" Icon="/Recursos/Imagenes/ventana.png"
+        FocusManager.FocusedElement="{Binding ElementName=txtNombre}"
+        Title="INVENTARIO" Height="400" Width="600">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Border Background="#333" />
+            <TextBlock Text="Modelo de articulo" Style="{StaticResource stbTitulo}" />
+        </Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Nombre: " Style="{StaticResource stbFormularioObligatorio}" />
+            <Image Source="/Recursos/Iconos/error.png" Grid.Row="1" HorizontalAlignment="Left" Height="16" Margin="20,0,0,0" 
+                   Visibility="Hidden" x:Name="imgErrorNombre"/>
+            <TextBox Grid.Row="1" Style="{StaticResource txtFormulario}" x:Name="txtNombre" TextChanged="txtNombre_TextChanged" />
+            <TextBlock Grid.Column="1" Text="Marca: " Style="{StaticResource stbFormulario}" />
+            <TextBox Grid.Column="1" Grid.Row="1" Style="{StaticResource txtFormulario}" x:Name="txtMarca"/>
+            <TextBlock Text="Modelo: " Style="{StaticResource stbFormulario}" Grid.Row="2" />
+            <TextBox Grid.Row="3" Style="{StaticResource txtFormulario}" x:Name="txtModelo" />
+            <TextBlock Grid.Column="1" Text="Tipo: " Grid.Row="2" Style="{StaticResource stbFormularioObligatorio}" />
+            <Image Source="/Recursos/Iconos/error.png" Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="20,0,0,0"
+                   Visibility="Hidden" x:Name="imgErrorTipo"/>
+            <ComboBox Grid.Column="1" Grid.Row="3" Text="Selecciona un tipo" Style="{StaticResource comboFormulario}" 
+                      x:Name="comboTipo" DisplayMemberPath="nombre" SelectionChanged="comboTipo_SelectionChanged"/>
+            <TextBlock Text="Descripción: " Style="{StaticResource stbFormulario}" Grid.Row="4" />
+            <TextBox Grid.Row="5" Style="{StaticResource txtFormulario}" Grid.ColumnSpan="2" Height="60" 
+                     TextWrapping="WrapWithOverflow" x:Name="txtDescripcion"/>
+            <TextBlock Text="Los campos en negrita son obligatorios" Grid.Row="6" Margin="40,10,0,0" 
+                       FontWeight="Bold" Foreground="DarkRed"/>
+            <Button Grid.Column="1" Grid.Row="7" Style="{StaticResource sbtnBtnRedondo}" IsDefault="True" ToolTip="Guardar modelo de articulo" 
+                    x:Name="btnGuardar" Click="btnGuardar_Click" >
+                <Image Source="/Recursos/Iconos/guardar.png" Height="24" />
+            </Button>
+            <Button Grid.Column="1" Grid.Row="7" Style="{StaticResource sbtnBtnRedondo}" HorizontalAlignment="Right" Margin="0,10,40,0"
+                    IsCancel="True" ToolTip="Cancelar" x:Name="btnCancelar" Click="btnCancelar_Click">
+                <Image Source="/Recursos/Iconos/cancelar.png" Height="24" />
+            </Button>
+        </Grid>
+    </DockPanel>
+</Window>

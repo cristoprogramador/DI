@@ -1,0 +1,61 @@
+﻿<UserControl x:Class="ejemplo_tema4.Vista.ControlesUsuario.UCGesModeloArticulo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ejemplo_tema4.Vista.ControlesUsuario"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <DockPanel>
+        <Grid DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+                <CheckBox x:Name="chbxAgrupar" Grid.Column="0" Content="Agrupar por tipo" Checked="chkGroupTipo_Checked" Unchecked="chkGroupTipo_Unchecked"/>
+            <ComboBox x:Name="cbxFiltrar" Grid.Column="1" Text="Filtrar" Margin="10" SelectionChanged="cbxFiltrar_SelectionChanged" 
+                          ItemsSource="{Binding listaTipos}" DisplayMemberPath="nombre" SelectedItem="{Binding tipoSeleccionado}"/>
+            <Button x:Name="btnNoFiltrar" Grid.Column="2" Content="Quitar filtro" Click="btnResetFiltro_Click" Height="30"/>
+
+            <TextBlock Text="Buscar por articulo: " Grid.Column="3" Margin="8,16,2,10"/>
+            <TextBox x:Name="txtBuscaModeloArticulos" TextChanged="txtBuscarModeloArticulo_TextChanged" Grid.Column="4" Width="140" Margin="4,10"/>
+
+
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <DataGrid ItemsSource="{Binding listaCollectionModelos}" AutoGenerateColumns="False" AlternationCount="2"
+                      GridLinesVisibility="None" HeadersVisibility="Column">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding nombre}"/>
+                    <DataGridTextColumn Header="Marca" Binding="{Binding marca}"/>
+                    <DataGridTextColumn Header="Tipo de articulo" Binding="{Binding tipoarticulo.nombre}"/>
+                    <DataGridTextColumn Header="Número de articulos" Binding="{Binding articulo.Count}"/>
+                    <DataGridTextColumn Header="Modelo" Binding="{Binding modelo}"/>
+                    <DataGridTextColumn Header="Descripcion" Binding="{Binding descripcion}"/>
+                </DataGrid.Columns>
+                <DataGrid.RowDetailsTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <TextBlock Text="LISTA DE ARTICULOS"/>
+
+                            <DataGrid ItemsSource="{Binding articulo}" AutoGenerateColumns="False" CanUserAddRows="False"
+                                      HeadersVisibility="Column" GridLinesVisibility="None">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Numero de serie" Binding="{Binding numserie}"/>
+                                    <DataGridTextColumn Header="Usuario de alta" Binding="{Binding usuario.username}"/>
+                                </DataGrid.Columns>
+                                
+                            </DataGrid>
+                            
+                        </StackPanel>
+                    </DataTemplate>
+                </DataGrid.RowDetailsTemplate>
+            </DataGrid>
+        </Grid>
+    </DockPanel>
+    
+</UserControl>

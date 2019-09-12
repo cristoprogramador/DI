@@ -1,0 +1,96 @@
+﻿
+    <Window x:Class="Tema3.Ejercicio1.di.dam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3.Ejercicio1.di.dam"
+        mc:Ignorable="d"
+        Icon="icons\Aplicacion.png" Title="Tema 3 - Ejercicio 1" 
+        Height="450" Width="800">
+    <Grid>
+        <!--Definimos dos filas-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        
+        <!--Priemra fila Menú-->
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" Width="800" IsMainMenu="True">
+            <MenuItem Header="_Fichero" Style="{StaticResource tbMenu}"
+                      ToolTip="Opciones de fichero">
+                <MenuItem Header="_Nuevo" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Nuevo archivo"
+                          InputGestureText="Ctrl+N">
+                    <MenuItem.Icon>
+                          <Image Source="icons/Nuevo.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Abrir" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Abrir archivo existente"
+                          InputGestureText="Ctrl+A"
+                          Click="MenuItem_Click">
+                    <MenuItem.Icon>
+                        <Image Source="icons/Abrir.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Guardar" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Guardar archivo">
+                    <MenuItem.Icon>
+                        <Image Source="icons/Guardar.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <Separator />
+                <MenuItem Header="_Mostrar opciones" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Mostrar opciones de archivo"/>
+                <Separator />
+                <MenuItem Header="_Salir" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Salir del programa"
+                          InputGestureText="Ctrl+S"
+                          Click="Button_Click">
+                    <MenuItem.Icon>
+                        <Image Source="icons/Salir.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Ayuda" Style="{StaticResource tbMenu}"
+                      ToolTip="Ayuda al usuario">
+                <MenuItem Header="_Acerca de" Style="{StaticResource tbSubmenu}"
+                          ToolTip="Información del programa" />
+            </MenuItem>
+        </Menu>
+        
+        <!--Segunda fila Barra de herramientas-->
+            <ToolBar Grid.Row="1" Background="Gray">
+                <Button ToolTip="Abrir un archivo existente"
+                        Style="{StaticResource btToolbar}"
+                        Click="MenuItem_Click">
+                <Image Source="icons/Abrir24.png"/>
+                </Button>
+                <Button ToolTip="Crear un nuevo archivo"
+                        Style="{StaticResource btToolbar}">
+                <Image Source="icons/Nuevo24.png"/>
+                </Button>
+            <Separator Background="Orange"/>
+            <Button ToolTip="Exportar a pdf"
+                    Style="{StaticResource btToolbar}">
+                <Image Source="icons/Exportpdf24.png"/>
+            </Button>
+            <Button ToolTip="Importar archivo"
+                    Style="{StaticResource btToolbar}">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/icons/import24.png"/>
+                    <TextBlock Text="Importar"
+                               Style="{StaticResource tbToolbar}"/>
+                </StackPanel>
+            </Button>
+            <Separator Background="Orange"/>
+            <Button ToolTip="Salir del programa"
+                    Style="{StaticResource btToolbar}"
+                    Click="Button_Click">
+                <Image Source="icons/Salir24.png"/>
+            </Button>
+        </ToolBar>
+
+    </Grid>
+</Window>

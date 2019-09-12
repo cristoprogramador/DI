@@ -1,0 +1,67 @@
+﻿<Window x:Class="Tema3.Ejercicio1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3.Ejercicio1"
+        mc:Ignorable="d"
+        Title="Tema 3 - Ejercicio 1" Height="350" Width="525" Icon="icons/Aplicacion.png" Foreground="#FF767272" FontWeight="Bold">
+
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <Menu x:Name="menuPrueba" HorizontalAlignment="Stretch" Height="25" VerticalAlignment="Top" IsMainMenu="True" Width="Auto">
+                <MenuItem Header="_Fichero" Foreground="#FFF39C12" FontWeight="Bold">
+                    <MenuItem Header="_Nuevo" InputGestureText="Ctrl+N" FontWeight="Normal">
+                        <MenuItem.Icon>
+                            <Image Source="icons/Nuevo.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Abrir" InputGestureText="Ctrl+A" Click="menuItem_Abrir" FontWeight="Normal" >
+                        <MenuItem.Icon>
+                            <Image Source="icons/Abrir.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="_Guardar" FontWeight="Normal" >
+                        <MenuItem.Icon>
+                            <Image Source="icons/Guardar.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <Separator />
+                    <MenuItem Header="Mostrar _opciones" IsCheckable="True" FontWeight="Normal"/>
+                    <Separator />
+                    <MenuItem Header="_Salir" InputGestureText="Ctrl+S" FontWeight="Normal" Click="handleExitWindow" >
+                        <MenuItem.Icon>
+                            <Image Source="icons/Salir.png"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="A_yuda" FontWeight="Bold" Foreground="#FFF39C12">
+                    <MenuItem Header="Acerca _de" FontWeight="Normal"/>
+                </MenuItem>
+            </Menu>
+            <ToolBar Background="#FF767272" HorizontalContentAlignment="Stretch" >
+                <Button x:Name="btnToolAbrir" Background="Transparent" BorderBrush="White" Margin="5">
+                    <Image x:Name="imgToolAbrir" Source="icons/Abrir24.png" Width="16" Height="16" ToolTip="Abrir Documento"/>
+                </Button>
+                <Button x:Name="btnToolNuevo" Background="Transparent" BorderBrush="White" Margin="5">
+                    <Image x:Name="imgToolNuevo" Source="icons/Nuevo24.png"  Width="16" Height="16" ToolTip="Añadir Documento"/>
+                </Button>
+                <Separator Background="Orange"/>
+                <Button x:Name="btnToolExport" Background="Transparent" BorderBrush="White" Margin="5" ToolTip="Exportar PDF">
+                    <Image x:Name="imgToolExport" Source="icons/ExportPdf24.png" Width="16" Height="16"/>
+                </Button>
+                <Button x:Name="btnToolImport" Background="Transparent" BorderBrush="White" Margin="5">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="icons/Import24.png" Width="16" Height="16"/>
+                        <TextBlock Margin="3,0,0,0" Foreground="White" ToolTip="Importar"><Run Text="Importar"/></TextBlock>
+                    </StackPanel>
+                </Button>
+                <Separator Background="Orange"/>
+                <Button x:Name="btnToolSalir" Background="Transparent" BorderBrush="White" Margin="5" Click="handleExitWindow">
+                    <Image x:Name="imgToolSalir" Source="icons/Salir24.png" Width="16" Height="16" ToolTip="Salir Aplicación"/>
+                </Button>
+            </ToolBar>
+        </StackPanel>
+
+    </DockPanel>
+</Window>

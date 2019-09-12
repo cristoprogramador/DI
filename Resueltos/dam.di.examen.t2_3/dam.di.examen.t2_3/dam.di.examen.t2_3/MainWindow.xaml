@@ -1,0 +1,159 @@
+﻿<Window x:Class="dam.di.examen.t2_3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dam.di.examen.t2_3"
+        xmlns:ac="clr-namespace:System.Windows.Controls;assembly=Accordion"
+        mc:Ignorable="d" Icon="Iconos/AddUser.png"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel>
+        <!-- Parte superior -->
+        <Grid DockPanel.Dock="Top" Background="#274D94">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Border Background="#222" Grid.RowSpan="2" />
+            <Image Source="Iconos/Rotate.png" Height="48" Margin="10" Grid.RowSpan="2" />
+            <!-- Menu -->
+            <Menu Grid.Column="1">
+                <MenuItem Header="Contactos" >
+                    <MenuItem Header="Nuevo">
+                        <!-- Añdimos el icono al item -->
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Contact.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Eliminar" >
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Exit.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Correo" >
+                    <MenuItem Header="Nuevo Mensaje">
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Mail.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Editar Mensaje" >
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Edit.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+                <MenuItem Header="Calendario" >
+                    <MenuItem Header="Reservar">
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Calendar.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                    <MenuItem Header="Editar Reserva" >
+                        <MenuItem.Icon>
+                            <Image Source="Iconos/Edit.png" Height="16" />
+                        </MenuItem.Icon>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+            <!-- Botones -->
+            <StackPanel Grid.Column="1" Grid.Row="1" Orientation="Horizontal">
+                <Button Style="{StaticResource sbtnToolBar}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Iconos/Edit.png" Height="16" />
+                        <TextBlock Text="Compose" Style="{StaticResource stbToolBar}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource sbtnToolBar}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Iconos/Plus.png" Height="16" />
+                        <TextBlock Text="New" Style="{StaticResource stbToolBar}" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource sbtnToolBar}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="Iconos/Reply.png" Height="16" />
+                        <TextBlock Text="Reply" Style="{StaticResource stbToolBar}" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <TextBox Grid.Column="2" Grid.RowSpan="2" Width="120" Height="30"/>
+            <Button Grid.Column="3" Grid.RowSpan="2" Margin="10" Background="#274D94" Height="35"
+                    BorderBrush="#274D94" x:Name="btnSalir" Click="btnSalir_Click">
+                <Image Source="Iconos/Exit.png" Height="30" />
+            </Button>
+        </Grid>
+        <!-- Parte izquierda -->
+        <Grid DockPanel.Dock="Left">
+            <ac:Accordion Width="150" FontWeight="Bold" VerticalAlignment="Stretch">
+                <ac:AccordionItem Background="White">
+                    <!-- Personalización de la cabecera -->
+                    <ac:AccordionItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Iconos/Accounts.png" Height="16" />
+                            <TextBlock Text="Accounts" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ac:AccordionItem.Header>
+                    <StackPanel Background="White"
+                        Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                        Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button Style="{StaticResource sbtnAcordeon}" Content="New" Margin="10"/>
+                    </StackPanel>
+                </ac:AccordionItem>
+                <ac:AccordionItem Background="White">
+                    <ac:AccordionItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Iconos/Actions.png" Height="16" />
+                            <TextBlock Text="Actions" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ac:AccordionItem.Header>
+                    <StackPanel Background="White"
+                        Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                        Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button Style="{StaticResource sbtnAcordeon}" Content="Reply" Margin="10" />
+                    </StackPanel>
+                </ac:AccordionItem>
+                <ac:AccordionItem Background="White">
+                    <ac:AccordionItem.Header>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="Iconos/Tools.png" Height="16" />
+                            <TextBlock Text="Tools" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </ac:AccordionItem.Header>
+                    <StackPanel Background="White"
+                        Width="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualWidth}"
+                        Height="{Binding RelativeSource={RelativeSource AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button Style="{StaticResource sbtnAcordeon}" Content="Compose" Margin="10" />
+                    </StackPanel>
+                </ac:AccordionItem>
+            </ac:Accordion>
+        </Grid>
+        <!-- Parte inferior -->
+        <Grid DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Separator Grid.ColumnSpan="4" Background="#274D94" Margin="5,0,5,0" VerticalAlignment="Top" />
+            <TextBlock Text="Nuevo Mensaje:" Foreground="#274D94" FontWeight="Bold" Margin="5,0,0,0" />
+            <Button Content="Resetear" Grid.Column="2" Grid.Row="1" Margin="10" Width="100"/>
+            <Button Content="Actualizar" Grid.Column="3" Grid.Row="1" Margin="10" Width="100" Background="White"/>
+        </Grid>
+        <!-- Parte central. Realizada con C# -->
+        <Grid x:Name="gridCentral">
+            
+        </Grid>
+    </DockPanel>
+</Window>

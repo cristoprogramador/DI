@@ -1,0 +1,66 @@
+﻿<Window x:Class="Tema2.Ejercicio7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema2.Ejercicio7"
+        mc:Ignorable="d"
+        Title="Add Azure WebJob" Height="430" Width="820" HorizontalAlignment="Center"
+        SizeToContent="WidthAndHeight">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="imgLogo" Grid.Column="0" Grid.Row="0" Source="img/windows-10-logo.png" Width="40" Height="40"/>
+        <Label x:Name="lblTitulo" Content="Microsoft Azure WebJobs" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"
+               FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblProject" Content="Project Name:" Grid.Column="1" Grid.Row="1" />
+        <Label x:Name="lblStarting" Content="Starting on:" Grid.Column="3" Grid.Row="1" Margin="15,0,0,0"/>
+        <Label x:Name="lblEnding" Content="Ending on:" Grid.Column="5" Grid.Row="1" Margin="12,0,0,0"/>
+        <ComboBox x:Name="comboProject" Text="WebJobTest1"  Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Height="22"/>
+        <Label x:Name="lblJob" Content="WebJob Name:" Grid.Column="1" Grid.Row="3" Padding="0,5,0,0"/>
+        <TextBox x:Name="textWeb" Text="WebJobTest1"  Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="2" Height="20"/>
+        <Label x:Name="lblRun" Content="WebJob Run Mode:" Grid.Column="1" Grid.Row="5" Padding="0,5,0,0"/>
+        <ComboBox x:Name="comboRun" Text="Run on Schedule"  Grid.Column="1" Grid.Row="6" Grid.ColumnSpan="2" Height="22"/>
+        <Calendar x:Name="calStarting" Grid.Column="3" Grid.Row="2" Grid.RowSpan="5" />
+        <Calendar x:Name="calEnding" Grid.Column="5" Grid.Row="2" Grid.RowSpan="5" Margin="15,0,0,0"/>
+        <Label x:Name="lblRecurrence" Content="Recurrence:" Grid.Column="1" Grid.Row="7" Padding="0,5,0,0"/>
+        <Label x:Name="lblStartingTime" Content="Starting Time:" Grid.Column="3" Grid.Row="7" Margin="12,0,0,0" />
+        <Label x:Name="lblEndingTime" Content="Ending Time:" Grid.Column="5" Grid.Row="7" Margin="12,0,0,0"/>
+        <ComboBox x:Name="comboRecurrence" Text="" Grid.Column="1" Grid.Row="8" Height="22"/>
+        <CheckBox x:Name="checkNoEnd" Content="No end date" Grid.Column="2" Grid.Row="8" Margin="10,0,0,0" VerticalAlignment="Center"/>
+        <ComboBox x:Name="comboStartingTime" Text="" Grid.Column="3" Grid.Row="8" Grid.ColumnSpan="2" Height="22" Margin="15,0,0,0" Width="240"/>
+        <ComboBox x:Name="comboEndingTime" Text="" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="2" Height="22" Margin="15,0,0,0" Width="240"/>
+        <Label x:Name="lblRecur" Content="Recur Every:" Grid.Column="1" Grid.Row="9" HorizontalAlignment="Left" Padding="0,5,0,0"/>
+        <Label x:Name="lblStartingZone" Content="Starting Time Zone:" Grid.Column="3" Grid.Row="9" Margin="12,0,0,0" />
+        <Label x:Name="lblEndingZone" Content="Ending Time Zone:" Grid.Column="5" Grid.Row="9" Margin="12,0,0,0"/>
+        <ComboBox x:Name="comboRecur" Text="" Grid.Column="1" Grid.Row="10" Height="22" Grid.ColumnSpan="2" Margin="50,0,0,0"/>
+        <TextBox x:Name="textRecur" Text="1" Height="22" Grid.Column="1" Grid.Row="10" Width="30" HorizontalAlignment="Left"/>
+        <ComboBox x:Name="comboStartingZone" Text="" Grid.Column="3" Grid.Row="10" Grid.ColumnSpan="2" Height="22" Margin="15,0,0,0"/>
+        <ComboBox x:Name="comboEndingZone" Text="" Grid.Column="5" Grid.Row="10" Grid.ColumnSpan="2" Height="22" Margin="15,0,0,0"/>
+        <Label x:Name="lblLearn" Content="Learn More" Grid.Column="1" Grid.Row="11" Foreground="Blue" VerticalAlignment="Bottom" FontSize="11"
+               Padding="0,5,0,0"/>
+        <Button x:Name="btnOk" Content="OK" Grid.Column="5" Grid.Row="11" Width="50" HorizontalAlignment="Right" Margin="0,10,0,0"/>
+        <Button x:Name="btnCancel" Content="Cancel" Grid.Column="6" Grid.Row="11" HorizontalAlignment="Left" Margin="10,10,0,0" Width="50"/>
+    </Grid>
+</Window>

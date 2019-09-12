@@ -1,0 +1,65 @@
+﻿<Controls:MetroWindow x:Class="dam.di.repaso.navidad.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dam.di.examen.jardineria"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d" WindowState="Maximized"
+        Title="EXAMEN DI" Height="750" Width="1025">
+    <Controls:MetroWindow.LeftWindowCommands>
+        <Controls:WindowCommands>
+            <Image Source="/Recursos/Iconos/Flores.png" Height="24" Margin="5,0,0,0" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.LeftWindowCommands>
+    <DockPanel>
+        <Controls:FlyoutsControl>
+            <Controls:Flyout Position="Left" Width="200" IsOpen="True" x:Name="flyExamen">
+                <Controls:Flyout.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Menu" Margin="10,0,0,0"/>
+                            <Image Source="/Recursos/Iconos/Menu.png" Height="24" Margin="70,0,0,0"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </Controls:Flyout.HeaderTemplate>
+                <StackPanel>
+                    <Button x:Name="btnAltaProductos" Style="{DynamicResource SquareButtonStyle}" Width="120"
+                            Margin="0,0,0,20" Click="btnAltaProductos_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Productos" Width="80"/>
+                            <Image Source="/Recursos/Iconos/Producto.png" Height="16" />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnAltaEmpleados" Style="{DynamicResource SquareButtonStyle}" Width="120"
+                            Click="btnAltaEmpleados_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Empleados" Width="80" />
+                            <Image Source="/Recursos/Iconos/Empleado.png" Height="16" />
+                        </StackPanel>
+                    </Button>
+                    <Separator Margin="10" />
+                    <Button x:Name="btnAltaOficinas" Style="{DynamicResource SquareButtonStyle}" Width="120" Margin="0,0,0,20"
+                            Click="btnAltaOficinas_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Oficinas" Width="80" />
+                            <Image Source="/Recursos/Iconos/Oficinas.png" Height="16"  />
+                        </StackPanel>
+                    </Button>
+                    <Button x:Name="btnAltaPedidos" Style="{DynamicResource SquareButtonStyle}" Width="120" Click="btnAltaPedidos_Click">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Pedidos" Width="80" />
+                            <Image Source="/Recursos/Iconos/Clientes.png" Height="16"  />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+            </Controls:Flyout>
+        </Controls:FlyoutsControl>
+        <Grid x:Name="gridCentral">
+            
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            
+        </Grid>
+    </DockPanel>
+</Controls:MetroWindow>

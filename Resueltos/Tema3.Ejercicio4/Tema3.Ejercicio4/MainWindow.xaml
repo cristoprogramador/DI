@@ -1,0 +1,130 @@
+﻿<Window x:Class="Tema3.Ejercicio4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3.Ejercicio4"
+        mc:Ignorable="d" Icon="icons/Settings.png"
+        Title="Tema3.Ejercicio4" Height="550" Width="760">
+    <Window.Resources>
+        
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Top" Background="#0E166E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnApplication" Grid.Column="0" Margin="10" Background="#0E166E" BorderBrush="Transparent">
+                <Image x:Name="imgApplication" Source="icons\Principal.png" Height="32"/>
+            </Button>
+            <Label x:Name="lblTitulo" Content="Aplicación" Grid.Column="1" Foreground="White" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"
+                   Margin="10,0,0,0" Grid.ColumnSpan="2" Width="150"/>
+        </Grid>
+        <Grid >
+            <TabControl TabStripPlacement="Left" x:Name="tabControlPrincipal" SelectionChanged="tabControlPrincipal_SelectionChanged">
+                <TabItem HorizontalAlignment="Stretch" x:Name="Dashboard" >
+                    <TabItem.Header >
+                        <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Stretch" Width="100">
+                            <Image Name="imgDashboard" Height="16" Width="16" Source="icons/Dashboard.png" />
+                            <TextBlock Text="Dashboard" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="#34495e"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                    <Grid Margin="10,0,10,10" HorizontalAlignment="Stretch" x:Name="gridDashboard">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Datos Personales" />
+                        <Separator Grid.Row="1" Grid.ColumnSpan="6" Background="#0E166E"/>
+                        <Label Content="Nombre:" Grid.Row="2" Grid.Column="0" Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtNombre" Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,15,0,0" Width="200"/>
+                        <Label Content="Apellido:" Grid.Row="2" Grid.Column="3" Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtApellido" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Margin="0,15,0,0"/>
+                        <Label Content="Cargo:" Grid.Row="3" Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtCargo" Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,15,0,0"/>
+                        <Label Content="Nickname:" Grid.Row="3" Grid.Column="3" Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtNickname" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,15,0,0"/>
+                        <Label Content="Formato:" Grid.Column="0" Grid.Row="4" Margin="0,15,0,0" />
+                        <ComboBox Grid.Column="1" Grid.Row="4" Grid.ColumnSpan="5" Margin="0,15,0,0"
+                                  x:Name="comboFormato" SelectionChanged="comboFormato_SelectionChanged"
+                                  IsEditable="True" IsReadOnly="False" Text="Selecciona un formato">
+                            <ComboBoxItem Content="Normal" />
+                            <ComboBoxItem Content="Negrita" />
+                            <ComboBoxItem Content="Cursiva" />
+                        </ComboBox>
+                        <Label Content="Correo" Grid.Column="0" Grid.Row="5" Margin="0,15,0,0" />
+                        <Separator Grid.Row="6" Grid.ColumnSpan="6" Background="#0E166E"/>
+                        <Label Content="Dirección de correo" Grid.Column="0" Grid.Row="7" Margin="0,15,0,0"/>
+                        <TextBox x:Name="txtCorreo" Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="4" Margin="0,15,0,0" 
+                                 VerticalContentAlignment="Center" Padding="0,0,5,0">
+                           
+                        </TextBox>
+                        <Button x:Name="btnAnyadir" Grid.Column="5" Grid.Row="7" Content="Añadir" Margin="15,15,0,0" Width="80" Height="25" />
+                        <ListBox x:Name="listBCorreos" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="5"
+                                 Grid.RowSpan="3" Margin="0,15,0,0" Height="100" />
+                        <Button x:Name="btnEditar" Grid.Column="5" Grid.Row="8" Content="Editar" Margin="15,15,0,0" Width="80" Height="25"
+                                VerticalAlignment="Top" />
+                        <Button x:Name="btnEliminar" Grid.Column="5" Grid.Row="9" Content="Eliminar" Margin="15,0,0,0" Width="80" Height="25"
+                                VerticalAlignment="Top" />
+                        <Label Content="Formato de correo" Grid.Column="0" Grid.Row="11" Margin="0,15,0,0" />
+                        <RadioButton Grid.Column="0" Grid.Row="12" GroupName="grpFormatoCorreo" Margin="0,15,0,0" IsChecked="True">
+                            <WrapPanel>
+                                <Image Source="icons/HTML.png"/>
+                                <TextBlock Text="HTML" Margin="3,0,0,0"/>
+                            </WrapPanel>
+                        </RadioButton>
+                        <RadioButton Grid.Column="2" Grid.Row="12" GroupName="grpFormatoCorreo" Margin="0,15,0,0">
+                            <WrapPanel>
+                                <Image Source="icons/Text.png"/>
+                                <TextBlock Text="Texto Plano" Margin="3,0,0,0"/>
+                            </WrapPanel>
+                        </RadioButton>
+                        <RadioButton Grid.Column="4" Grid.Row="12" GroupName="grpFormatoCorreo" Margin="0,15,0,0">
+                            <WrapPanel>
+                                <Image Source="icons/Personalizado.png"/>
+                                <TextBlock Text="Personalizado" Margin="3,0,0,0"/>
+                            </WrapPanel>
+                        </RadioButton>
+                    </Grid>
+                </TabItem>
+                <TabItem  x:Name="Themes" HorizontalContentAlignment="Left">
+                    <TabItem.Header >
+                        <StackPanel HorizontalAlignment="Stretch" Orientation="Horizontal"  Margin="5" Width="100"  >
+                            <Image Name="imgThemes" Height="16" Width="16" Source="icons/Themes.png"/>
+                            <TextBlock Text="Themes" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="#34495e" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem >
+                <TabItem HorizontalAlignment="Stretch" x:Name="Components">
+                    <TabItem.Header>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="5" Width="100">
+                            <Image Name="imgComponents" Height="16" Width="16" Source="icons/Components.png" />
+                            <TextBlock Text="Components" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="#34495e"/>
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </DockPanel>
+</Window>

@@ -1,0 +1,79 @@
+﻿<Window xmlns:Controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"  x:Class="Tema3.Ejercicio2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tema3.Ejercicio2"
+        mc:Ignorable="d"
+        Title="Tema 3 - Ejercicio 3 - DI" Height="350" Width="525" Icon="icons/Ventana.png"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button" x:Key="sbtnAcordeon">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="FontWeight" Value="Bold" />
+        </Style>
+    </Window.Resources>
+    <DockPanel LastChildFill="True">
+        <Grid DockPanel.Dock="Left">
+            <Controls:Accordion VerticalAlignment="Stretch" BorderThickness="0" Margin="0">
+                <Controls:AccordionItem Header="Vista General" Height="Auto" Background="#17B6B6" Foreground="White" BorderThickness="0">
+                    <StackPanel Background="White" 
+                           Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, 
+                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button x:Name="btnEstado" Content="Estado" Foreground="#17B6B6" Style="{StaticResource sbtnAcordeon}" Click="handleBtnEstado"/>
+                    </StackPanel>
+                </Controls:AccordionItem>
+                <Controls:AccordionItem Header="Seguridad del PC" Background="#27B977" Foreground="White" BorderThickness="0">
+                    <StackPanel Background="White"
+                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, 
+                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button x:Name="btnScanner" Content="Escaner Sistema" Foreground="#27B977" Style="{StaticResource sbtnAcordeon}"/>
+                        <Button x:Name="btnProtection" Content="Proteccion Tiempo Real" Foreground="#27B977" Style="{StaticResource sbtnAcordeon}"/>
+                        <Button x:Name="btnBackup" Content="Backup" Foreground="#27B977" Style="{StaticResource sbtnAcordeon}"/>
+                    </StackPanel>
+                </Controls:AccordionItem>
+                <Controls:AccordionItem Header="Seguridad en Internet" Background="#016472" Foreground="White" BorderThickness="0">
+                    <StackPanel Background="White"
+                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, 
+                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button x:Name="btnFirewall" Content="Firewall" Background="Transparent" Margin="10" Foreground="#016472" FontWeight="Bold" />
+                        <Button x:Name="btnWebProtection" Content="Proteccion Web" Background="Transparent" Margin="10" Foreground="#016472" FontWeight="Bold"/>
+                        <Button x:Name="btnMailProtection" Content="Proteccion Mail" Background="Transparent" Margin="10" Foreground="#016472" FontWeight="Bold"/>
+                    </StackPanel>
+                </Controls:AccordionItem>
+                <Controls:AccordionItem Header="Administracion" Background="#EC9C00" Foreground="White" BorderThickness="0">
+                    <StackPanel Background="White"
+                                Width="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}, 
+                                Path=ActualWidth}"
+                                Height="{Binding RelativeSource={RelativeSource FindAncestor,AncestorType={x:Type Grid}}, Path=ActualHeight}">
+                        <Button x:Name="btnCuarentena" Content="Cuarentena" Background="Transparent" Margin="10" Foreground="#EC9C00" FontWeight="Bold"/>
+                        <Button x:Name="btnProgramador" Content="Programador"  Background="Transparent" Margin="10" Foreground="#EC9C00" FontWeight="Bold"/>
+                        <Button x:Name="btnInformes" Content="Informes"  Background="Transparent" Margin="10" Foreground="#EC9C00" FontWeight="Bold"/>
+                        <Button x:Name="btnEventos" Content="Eventos"  Background="Transparent" Margin="10" Foreground="#EC9C00" FontWeight="Bold"/>
+                    </StackPanel>
+                </Controls:AccordionItem>
+            </Controls:Accordion>
+        </Grid>
+        <Grid>
+            <ToolBar Background="#34495e" VerticalAlignment="Top">
+                <Button x:Name="btnBuscar" ToolTip="Buscar">
+                    <Image Source="icons/Buscar.png" Width="24" Height="24"/>
+                </Button>
+                <Button x:Name="btnFiltrar" ToolTip="Filtrar">
+                    <Image Source="icons/Filtrar.png" Width="24" Height="24"/>
+                </Button>
+                <Button x:Name="btnRefrescar" ToolTip="Refrescar">
+                    <Image Source="icons/Refrescar.png" Width="24" Height="24"/>
+                </Button>
+                <Button x:Name="btnSalir" ToolTip="Salir" Click="handleBtnSalir">
+                    <Image Source="icons/Cancel.png" Width="24" Height="24"/>
+                </Button>
+            </ToolBar>
+            <Image x:Name="imgCentral" Source="icons/PieChart.jpg" Visibility="Hidden" />
+        </Grid>
+    </DockPanel>
+</Window>
